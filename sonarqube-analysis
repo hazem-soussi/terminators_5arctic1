@@ -1,7 +1,8 @@
 
 node{
-
-  git branch: "main", url: "https://github.com/hazem-soussi/terminators_5arctic1" 
+  git credentialsId: 'hazem-soussi', 
+  git branch: "main",
+  url: "https://github.com/hazem-soussi/terminators_5arctic1" 
 
   stage('Unit Tests') {
     withEnv(["JAVA_HOME=${ tool "java-11" }", "PATH+MAVEN=${ tool "maven" }/bin:${env.JAVA_HOME}/bin"]) {
