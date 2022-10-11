@@ -1,38 +1,27 @@
-pipeline{
-    agent any
-    tools {
-      maven 'maven3'
-    }
 
-    stages{
-        stage('SCM'){
+      pipeline {
+        agent any
+        stages {
+          stage('SCM'){
             steps{
                 git credentialsId: 'github', 
                     url: 'https://github.com/hazem-soussi/terminators_5arctic1'
             }
-        }
-        
-        stage('Maven Build'){
-            steps{
-                sh "mvn clean package"
+          stage("build & SonarQube analysis") {
+            agent any
+            steps {
+              withSonarQubeEnv('My SonarQube Server') {
+                sh 'mvn clean package sonar:sonar'
+              }
             }
+          }
+          stage("Quality Gate") {
+            steps {
+              timeout(time: 1, unit: 'HOURS') {
+                waitForQualityGate abortPipeline: true
+              }
+            }
+          }
         }
-        
-   
-        
-
-        
-stage('SonarQube analysis') {
-    tools {
-        jdk "jdk11" // the name you have given the JDK installation using the JDK manager (Global Tool Configuration)
-    }
-    environment {
-        scannerHome = tool 'SonarQube Scanner' // the name you have given the Sonar Scanner (Global Tool Configuration)
-    }
-    steps {
-        withSonarQubeEnv(installationName: 'SonarQube') {
-            sh 'mvn sonar:sonar'
-        }
-    }
-}
-}
+      }
+      
