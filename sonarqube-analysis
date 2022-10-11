@@ -1,6 +1,5 @@
 node {
 
-stages {
     stage('SCM') {
             steps {
                 branch : /main,
@@ -20,5 +19,5 @@ stages {
     }
   }
   
- }
+ 
 }
