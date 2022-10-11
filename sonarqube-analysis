@@ -1,6 +1,6 @@
 node{
    stage('SCM Checkout'){
-   git branch: 'master', 
+   git branch: 'main', 
 	credentialsId: 'github', 
 	url: 'https://github.com/hazem-soussi/terminators_5arctic1'
 
