@@ -1,23 +1,37 @@
-node{
-   stage('SCM Checkout'){
-   git branch: 'main', 
-	credentialsId: 'github', 
-	url: 'https://github.com/hazem-soussi/terminators_5arctic1'
+pipeline{
+    agent any
+    tools {
+      maven 'maven3'
+    }
 
-   }
-    stage('Maven Build'){
+    stages{
+        stage('SCM'){
+            steps{
+                git credentialsId: 'github', 
+                    url: 'https://github.com/hazem-soussi/terminators_5arctic1'
+            }
+        }
+        
+        stage('Maven Build'){
             steps{
                 sh "mvn clean package"
             }
         }
-	
-	
-   stage('SonarQube Analysis') {
-        def mvnHome =  tool name: 'maven', type: 'maven'
-        withSonarQubeEnv('sonar-9.6.1') { 
-          sh "${mvnHome}/bin/mvn sonar:sonar"
-        }
-    } 
-    
-    
+        
+   
+        
+
+        
+stage('SonarQube analysis') {
+    tools {
+        jdk "jdk11" // the name you have given the JDK installation using the JDK manager (Global Tool Configuration)
     }
+    environment {
+        scannerHome = tool 'SonarQube Scanner' // the name you have given the Sonar Scanner (Global Tool Configuration)
+    }
+    steps {
+        withSonarQubeEnv(installationName: 'SonarQube') {
+            sh 'mvn sonar:sonar'
+        }
+    }
+}
