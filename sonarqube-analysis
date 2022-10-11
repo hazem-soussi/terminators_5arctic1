@@ -1,6 +1,9 @@
 node{
    stage('SCM Checkout'){
-     git 'https://github.com/hazem-soussi/terminators_5arctic1'
+   git branch: 'master', 
+	credentialsId: 'github', 
+	url: 'https://github.com/hazem-soussi/terminators_5arctic1'
+
    }
    stage('Compile-Package'){
       // Get maven home path
