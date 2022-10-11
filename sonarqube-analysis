@@ -1,26 +1,22 @@
-pipeline{
-    agent any
-    tools {
-      maven 'maven3'
-    }
 
-    stages{
-        stage('SCM'){
-            steps{
-                git credentialsId: 'hazou', 
-                    url: 'https://github.com/hazem-soussi/automated_pipline_ansible'
-            }
-        }
-        
-        stage('Maven Build'){
-            steps{
-                sh "mvn clean package"
-            }
-        }
-        
-  
- 
-        
+node{
 
+  git branch: "main", url: "https://github.com/hazem-soussi/terminators_5arctic1" 
+
+  stage('Unit Tests') {
+    withEnv(["JAVA_HOME=${ tool "java-11" }", "PATH+MAVEN=${ tool "maven" }/bin:${env.JAVA_HOME}/bin"]) {
+        sh "mvn test"
     }
-}
+  }
+
+  stage ('Sonarqube') {
+    withEnv(["JAVA_HOME=${ tool "java-11" }", "PATH+MAVEN=${ tool "maven" }/bin:${env.JAVA_HOME}/bin"]) {
+        sh "mvn sonar:sonar -Dsonar.host.url=http://localhost:9000"
+    }
+  }
+
+  stage ('Build Jar') {
+    withEnv(["JAVA_HOME=${ tool "java-11" }", "PATH+MAVEN=${ tool "maven" }/bin:${env.JAVA_HOME}/bin"]) {
+        sh "mvn clean package -Dmaven.test.skip=true"
+    }
+  }
