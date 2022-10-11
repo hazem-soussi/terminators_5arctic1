@@ -1,7 +1,13 @@
 node {
-  stage('Clone the Git') {
-    git 'https://github.com/hazem-soussi/terminators_5arctic1'
-  }
+
+stages {
+    stage('SCM') {
+            steps {
+                branch : /main,
+                git url: 'https://github.com/hazem-soussi/terminators_5arctic1',
+            }
+        }
+        
   stage('SonarQube analysis') {
     def scannerHome = tool 'sonarqube';
     withSonarQubeEnv('sonarqube') {
@@ -13,4 +19,6 @@ node {
       -D sonar.host.url=http://localhost:9000/"
     }
   }
+  
+ }
 }
