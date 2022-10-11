@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('Clone sources') {
             steps {
-                git url: 'https://github.com/hazem-soussi/terminators_5arctic1'
+    git branch: 'main',
+    git url: 'https://github.com/hazem-soussi/terminators_5arctic1'
             }
         }
         stage('SonarQube analysis') {
