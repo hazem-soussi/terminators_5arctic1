@@ -1,23 +1,22 @@
-node {
 
-    stage('SCM') {
+      pipeline {
+        agent none
+        stages {
+          stage("build & SonarQube analysis") {
+            agent any
             steps {
-                branch : '/main',
-                git : 'https://github.com/hazem-soussi/terminators_5arctic1',
+              withSonarQubeEnv('My SonarQube Server') {
+                sh 'mvn clean package sonar:sonar'
+              }
             }
+          }
+          stage("Quality Gate") {
+            steps {
+              timeout(time: 1, unit: 'HOURS') {
+                waitForQualityGate abortPipeline: true
+              }
+            }
+          }
         }
-        
-  stage('SonarQube analysis') {
-    def scannerHome = tool 'sonarqube';
-    withSonarQubeEnv('sonarqube') {
-      sh "${scannerHome}/bin/sonar-scanner \
-      -D sonar.login=admin \
-      -D sonar.password=admin \
-      -D sonar.projectKey=sonarqubetest \
-      -D sonar.exclusions=vendor/**,resources/**,**/*.java \
-      -D sonar.host.url=http://localhost:9000/"
-    }
-  }
-  
- 
-}
+      }
+      
