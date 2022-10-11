@@ -3,6 +3,7 @@ node {
    stage 'checkout'
 
    // Get some code from a GitHub repository
+   branch : /main,
    git url: 'https://github.com/hazem-soussi/terminators_5arctic1'
    sh 'git clean -fdx; sleep 4;'
 
