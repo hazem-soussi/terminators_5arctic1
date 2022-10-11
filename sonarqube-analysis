@@ -1,27 +1,31 @@
-pipeline{
-    agent any
 
-    stages{
-   
+node{
+   stage('SCM Checkout'){
+     git 'https://github.com/hazem-soussi/terminators_5arctic1'
+   }
         stage('Maven Build'){
             steps{
                 sh "mvn clean package"
             }
         }
         
-       stage('Build'){
-            steps{
-                sh 'mvn clean package'
-            }
-         }
+
+   
         stage('SonarQube analysis') {
         steps{
         withSonarQubeEnv('sonarqube-9.6.1') { 
         // If you have configured more than one global server connection, you can specify its name
         sh "mvn sonar:sonar"
     }
-        }
-        }
-       
-    }
+
 }
+
+
+
+
+
+
+
+
+
+
