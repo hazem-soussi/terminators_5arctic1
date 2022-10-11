@@ -1,5 +1,6 @@
 
 node{
+stages {
    stage('SCM Checkout'){
      git 'https://github.com/hazem-soussi/terminators_5arctic1'
    }
