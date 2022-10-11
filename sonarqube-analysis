@@ -1,35 +1,22 @@
-
 pipeline {
-agent any
-stages {
-   stage('SCM Checkout'){
-     git 'https://github.com/hazem-soussi/terminators_5arctic1'
-   }
-   
-        stage('Maven Build'){
-            steps{
-                sh "mvn clean package"
+    agent any
+    stages {
+        stage('Clone sources') {
+            steps {
+                git url: 'https://github.com/hazem-soussi/terminators_5arctic1'
             }
         }
-        
-
-   
         stage('SonarQube analysis') {
-        steps{
-        withSonarQubeEnv('sonarqube-9.6.1') { 
-        // If you have configured more than one global server connection, you can specify its name
-        sh "mvn sonar:sonar"
+            steps {
+                withSonarQubeEnv('SonarQube') {
+                    sh "./gradlew sonarqube"
+                }
+            }
+        }
+        stage("Quality gate") {
+            steps {
+                waitForQualityGate abortPipeline: true
+            }
+        }
     }
-
 }
-}
-
-
-
-
-
-
-
-
-
-
