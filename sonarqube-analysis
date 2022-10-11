@@ -2,13 +2,7 @@ pipeline{
     agent any
 
     stages{
-     stage('SCM Checkout'){
-    // Clone repo
-	git branch: 'main', 
-	credentialsId: 'github', 
-	url: 'https://github.com/hazem-soussi/terminators_5arctic1'
    
-   }
         stage('Maven Build'){
             steps{
                 sh "mvn clean package"
