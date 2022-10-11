@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-     stages {
+
  stage("Code Checkout from GitHub") {
   steps {
    git branch: 'main',
