@@ -34,4 +34,5 @@ stage('SonarQube analysis') {
             sh 'mvn sonar:sonar'
         }
     }
-
+}
+}
