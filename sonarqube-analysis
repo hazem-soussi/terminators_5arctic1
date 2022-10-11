@@ -2,7 +2,7 @@ node {
 
     stage('SCM') {
             steps {
-                branch : /main,
+                branch : '/main',
                 git url: 'https://github.com/hazem-soussi/terminators_5arctic1',
             }
         }
