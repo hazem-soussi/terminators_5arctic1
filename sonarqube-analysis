@@ -8,6 +8,7 @@ pipeline {
     url: 'https://github.com/hazem-soussi/terminators_5arctic1'
   }
  }
+ 
         stage('build && SonarQube analysis') {
             steps {
                 withSonarQubeEnv('sonarqube-9.6.1') {
@@ -15,8 +16,7 @@ pipeline {
                         sh 'mvn clean package sonar:sonar'
                     }
                 }
-            }
-        }
+    
         stage("Quality Gate") {
             steps {
                 timeout(time: 1, unit: 'HOURS') {
@@ -27,5 +27,3 @@ pipeline {
             }
         }
     }
-}
-
