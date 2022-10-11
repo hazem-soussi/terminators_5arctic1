@@ -9,11 +9,17 @@ pipeline {
   }
  }
  
-        stage('build && SonarQube analysis') {
+       stage('Maven Build'){
+            steps{
+                sh "mvn clean package"
+            }
+        }
+        
+ 
+        stage(' SonarQube analysis') {
             steps {
                 withSonarQubeEnv('sonarqube-9.6.1') {
                     // Optionally use a Maven environment you've configured already
-                        sh 'mvn clean package sonar:sonar'
                     }
                 }
     }
