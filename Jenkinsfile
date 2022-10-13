@@ -1,5 +1,5 @@
 pipeline {
-any agent    
+agent none  
     stages{
         
         stage('hello'){
