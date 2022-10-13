@@ -14,7 +14,7 @@ pipeline {
             steps{
                 echo 'pulling...';
                 git branch :'main',
-                url :'https://github.com/hazem-soussi/terminators_5arctic1',
+                url :'https://github.com/hazem-soussi/terminators_5arctic1';
             
         
     }
