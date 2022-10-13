@@ -15,7 +15,6 @@ pipeline {
                 echo 'pulling...';
                 git branch :'main',
                 url :'https://github.com/hazem-soussi/terminators_5arctic1',
-                credentialsId :'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';
             }
         }
     }
