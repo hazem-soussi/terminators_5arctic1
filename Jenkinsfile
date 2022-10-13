@@ -6,6 +6,7 @@ agent any
             
             steps{
                 echo 'hello world' 
+                echo 'hell'
                 
             }
         }   
