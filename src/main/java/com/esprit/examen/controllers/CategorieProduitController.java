@@ -60,6 +60,6 @@ public class CategorieProduitController {
 	public CategorieProduit modifyCategorieProduit(@RequestBody CategorieProduit categorieProduit) {
 		return categorieProduitService.updateCategorieProduit(categorieProduit);
 	}
-
+....
 	
 }
