@@ -4,7 +4,8 @@ agent any
         stage ("Git checkout PLEAASE"){
             steps{
         git branch: 'main', 
-            url: 'https://github.com/hazem-soussi/terminators_5arctic1.git'}
+            url: 'https://github.com/hazem-soussi/terminators_5arctic1.git'
+            }
         
         }
     
