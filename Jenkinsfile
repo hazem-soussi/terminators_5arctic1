@@ -2,7 +2,7 @@ pipeline {
 agent any
     stages {
         
-        stage('MVN CLEAN'){
+       /* stage('MVN CLEAN'){
             steps {
                 echo'clean...'
             }
@@ -19,7 +19,8 @@ agent any
             steps {
                 echo'sonarqube'
             }
-        }
+        } */
+        // main SATGES
         stage ("Git checkout PLEAASE"){
             steps{
         git branch: 'main', 
