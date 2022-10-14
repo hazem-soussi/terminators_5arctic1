@@ -17,7 +17,7 @@ agent any
         
          stage('MVN SONARQUBE'){
             steps {
-                echo'sonarqube')
+                echo'sonarqube'
             }
         }
         stage ("Git checkout PLEAASE"){
