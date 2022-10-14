@@ -33,7 +33,7 @@ agent any
                 stage('Build Project') {
             steps {
                 echo "Build our project"
-                bat 'mvn package '
+                sh 'mvn package '
             }
         }
         
