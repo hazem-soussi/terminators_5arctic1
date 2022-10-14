@@ -30,6 +30,15 @@ agent any
         }
     
         
+                stage('Build Project') {
+            steps {
+                echo "Build our project"
+                bat 'mvn package '
+            }
+        }
+        
+
+        
              stage ("unit testing"){
             steps{
                 sh "mvn test"
