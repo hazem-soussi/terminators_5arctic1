@@ -15,6 +15,11 @@ agent any
             }
         }
         
+         stage('MVN SONARQUBE'){
+            steps {
+                echo'sonarqube')
+            }
+        }
         stage ("Git checkout PLEAASE"){
             steps{
         git branch: 'main', 
