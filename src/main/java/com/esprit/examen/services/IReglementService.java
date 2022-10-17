@@ -1,6 +1,6 @@
 package com.esprit.examen.services;
 
-import java.util.Date;
+
 import java.util.List;
 
 import com.esprit.examen.entities.Reglement;
@@ -11,6 +11,6 @@ public interface IReglementService {
 	Reglement addReglement(Reglement r);
 	Reglement retrieveReglement(Long id);
 	
-	float getChiffreAffaireEntreDeuxDate(Date startDate, Date endDate); 
+	
 
 }

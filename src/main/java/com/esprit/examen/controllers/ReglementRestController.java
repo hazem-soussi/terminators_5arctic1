@@ -1,11 +1,11 @@
 package com.esprit.examen.controllers;
 
-import java.util.Date;
+
 import java.util.List;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
+
 import org.springframework.web.bind.annotation.*;
 
 import com.esprit.examen.entities.Reglement;
@@ -47,14 +47,5 @@ public class ReglementRestController {
    
    
    
-    @GetMapping(value = "/getChiffreAffaireEntreDeuxDate/{startDate}/{endDate}")
-    public float getChiffreAffaireEntreDeuxDate(
-            @PathVariable(name = "startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date startDate,
-            @PathVariable(name = "endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date endDate) {
-        try {
-            return reglementService.getChiffreAffaireEntreDeuxDate(startDate, endDate);
-        } catch (Exception e) {
-            return 0;
-        }
-    }
+    
 }
