@@ -73,6 +73,7 @@ public class ProduitRestController {
 			@PathVariable(name = "endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date endDate) {
 
 		return produitService.getRevenuBrutProduit(idProduit, startDate, endDate);
+	}
 	}*/
 
-//}
+
