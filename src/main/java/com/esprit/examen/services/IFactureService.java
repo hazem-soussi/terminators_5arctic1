@@ -1,4 +1,4 @@
-package com.esprit.examen.services;
+/*package com.esprit.examen.services;
 
 import java.util.Date;
 import java.util.List;
@@ -20,3 +20,4 @@ public interface IFactureService {
 	float pourcentageRecouvrement(Date startDate, Date endDate);
 
 }
+*/

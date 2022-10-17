@@ -1,4 +1,4 @@
-package com.esprit.examen.repositories;
+/*package com.esprit.examen.repositories;
 
 //import java.util.Date;
 
@@ -11,7 +11,8 @@ import com.esprit.examen.entities.Produit;
 @Repository
 public interface ProduitRepository extends JpaRepository<Produit, Long> {
 
-	
+}
+*/	
 	
 	
 	
@@ -26,4 +27,3 @@ public interface ProduitRepository extends JpaRepository<Produit, Long> {
 			+ " and :endDate and df.facture.active=true")
 	public float getRevenuBrutProduit(@Param("produit") Produit produit, @Param("startDate") Date startDate,
 			@Param("endDate") Date endDate);*/
-}

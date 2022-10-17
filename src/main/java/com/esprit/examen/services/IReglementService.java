@@ -1,4 +1,4 @@
-package com.esprit.examen.services;
+/*package com.esprit.examen.services;
 
 import java.util.Date;
 import java.util.List;
@@ -14,3 +14,4 @@ public interface IReglementService {
 	float getChiffreAffaireEntreDeuxDate(Date startDate, Date endDate); 
 
 }
+*/

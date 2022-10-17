@@ -1,5 +1,6 @@
-package com.esprit.examen.entities;
+/*package com.esprit.examen.entities;
 
 public enum CategorieFournisseur {
 ORDINAIRE,CONVENTIONNE
 }
+*/

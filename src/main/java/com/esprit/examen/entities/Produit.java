@@ -1,4 +1,4 @@
-package com.esprit.examen.entities;
+/*package com.esprit.examen.entities;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -24,8 +24,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Produit implements Serializable {
 
-	/**
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,6 +32,7 @@ public class Produit implements Serializable {
 	/*private String codeProduit;
 	private String libelleProduit;
 	private float prix;*/
+/*
 	@Temporal(TemporalType.DATE)
 	private Date dateCreation;
 	@Temporal(TemporalType.DATE)
@@ -40,15 +40,15 @@ public class Produit implements Serializable {
 	@ManyToOne
 	@JsonIgnore
 	private Stock stock;
-	@OneToMany(mappedBy = "produit")
+	/*@OneToMany(mappedBy = "produit")
 	@JsonIgnore
 	private Set<DetailFacture> detailFacture;
 	@ManyToOne
 	@JsonIgnore
 	private CategorieProduit categorieProduit;
-	
+	*/
 
 
 	
 
-}
+//}

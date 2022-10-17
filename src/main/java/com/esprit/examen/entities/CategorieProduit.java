@@ -1,4 +1,4 @@
-package com.esprit.examen.entities;
+/*package com.esprit.examen.entities;
 
 import java.io.Serializable;
 import java.util.Set;
@@ -20,9 +20,6 @@ import lombok.Setter;
 @NoArgsConstructor
 public class CategorieProduit implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,3 +30,4 @@ public class CategorieProduit implements Serializable {
 	@JsonIgnore
 	private Set<Produit> produits;
 }
+*/

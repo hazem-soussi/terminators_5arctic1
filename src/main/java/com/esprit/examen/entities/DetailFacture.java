@@ -1,4 +1,4 @@
-package com.esprit.examen.entities;
+/*package com.esprit.examen.entities;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -33,3 +33,4 @@ public class DetailFacture implements Serializable {
 	Facture facture;
 
 }
+*/

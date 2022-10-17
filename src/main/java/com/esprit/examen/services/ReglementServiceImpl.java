@@ -1,4 +1,4 @@
-package com.esprit.examen.services;
+/*package com.esprit.examen.services;
 
 import java.util.Date;
 import java.util.List;
@@ -50,4 +50,4 @@ public class ReglementServiceImpl implements IReglementService {
 		return reglementRepository.getChiffreAffaireEntreDeuxDate( startDate, endDate);
 	}
 
-}
+}*/

@@ -1,4 +1,4 @@
-package com.esprit.examen.entities;
+/*package com.esprit.examen.entities;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -29,10 +29,11 @@ public class Reglement implements Serializable{
 	/*private float montantPaye;
 	private float montantRestant;
 	private Boolean payee;*/
-	@Temporal(TemporalType.DATE)
+	
+    /*@Temporal(TemporalType.DATE)
 	private Date dateReglement;
 	@ManyToOne
 	@JsonIgnore
 	private Facture facture;
 	
-}
+}*/

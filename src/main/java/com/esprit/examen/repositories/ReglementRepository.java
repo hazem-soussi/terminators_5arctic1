@@ -1,4 +1,4 @@
-package com.esprit.examen.repositories;
+/*package com.esprit.examen.repositories;
 
 import java.util.Date;
 import java.util.List;
@@ -22,3 +22,4 @@ public interface ReglementRepository extends CrudRepository<Reglement, Long>{
 			+ " and :endDate and r.facture.archivee=false")
 	float getChiffreAffaireEntreDeuxDate(@Param("startDate") Date startDate, @Param("endDate") Date endDate);
 }
+*/

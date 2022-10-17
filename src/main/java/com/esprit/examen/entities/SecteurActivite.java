@@ -1,4 +1,4 @@
-package com.esprit.examen.entities;
+/*package com.esprit.examen.entities;
 
 import java.io.Serializable;
 import java.util.Set;
@@ -22,13 +22,16 @@ public class SecteurActivite implements Serializable{
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	/*private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idSecteurActivite;
 	/*private String codeSecteurActivite;
 	private String libelleSecteurActivite;*/
-	@ManyToMany(mappedBy="secteurActivites")
+	
+	
+	/*@ManyToMany(mappedBy="secteurActivites")
 	@JsonIgnore
 	private Set<Fournisseur> fournisseurs;
 }
+*/
