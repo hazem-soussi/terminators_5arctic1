@@ -31,8 +31,8 @@ public class Fournisseur implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idFournisseur;
-	private String code;
-	private String libelle;
+	//private String code;
+	//private String libelle;
 	@Enumerated(EnumType.STRING)
 	private CategorieFournisseur  categorieFournisseur;
 	@OneToMany(mappedBy="fournisseur")

@@ -27,9 +27,9 @@ public class Operateur implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idOperateur;
-	private String nom;
+	/*private String nom;
 	private String prenom;
-	private String password;
+	private String password;*/
 	@OneToMany
 	@JsonIgnore
 	private Set<Facture> factures;

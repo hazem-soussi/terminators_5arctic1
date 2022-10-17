@@ -28,13 +28,13 @@ public class Facture implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idFacture;
-	private float montantRemise;
-	private float montantFacture;
+	//private float montantRemise;
+	//private float montantFacture;
 	@Temporal(TemporalType.DATE)
 	private Date dateCreationFacture;
 	@Temporal(TemporalType.DATE)
 	private Date dateDerniereModificationFacture;
-	private Boolean archivee;
+	//private Boolean archivee;
 	@OneToMany(mappedBy = "facture")
 	private Set<DetailFacture> detailsFacture;
     @ManyToOne
