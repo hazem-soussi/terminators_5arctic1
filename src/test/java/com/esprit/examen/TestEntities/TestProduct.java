@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.esprit.examen.entities.Produit;
+import com.hades.kerberos.model.Product;
 
 public class TestProduct {
 	
@@ -40,6 +41,14 @@ public class TestProduct {
 
     }
     
+    @Test
+    public void testCreateProd() throws Exception{
+        Produit prod= new Produit("test","test");
+        Assert.assertEquals("test",prod.getCodeProduit() );
+        Assert.assertEquals("test",prod.getLibelleProduit() );
+    }
+
+
     
 
 
