@@ -1,4 +1,4 @@
-package com.esprit.examen.services;
+/*package com.esprit.examen.services;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -83,3 +83,4 @@ public class StockServiceImpl implements IStockService {
 	}
 
 }
+*/

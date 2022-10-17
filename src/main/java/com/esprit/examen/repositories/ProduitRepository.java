@@ -1,4 +1,4 @@
-package com.esprit.examen.repositories;
+/*package com.esprit.examen.repositories;
 
 
 
@@ -22,3 +22,4 @@ public interface ProduitRepository extends JpaRepository<Produit, Long> {
 	
 	
 }
+*/

@@ -1,4 +1,4 @@
-package com.esprit.examen.entities;
+/*package com.esprit.examen.entities;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -35,3 +35,4 @@ public class DetailFournisseur implements Serializable{
 	private Fournisseur fournisseur;
 	
 }
+*/

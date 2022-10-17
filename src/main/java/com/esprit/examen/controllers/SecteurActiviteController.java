@@ -1,4 +1,4 @@
-package com.esprit.examen.controllers;
+/*package com.esprit.examen.controllers;
 
 import java.util.List;
 
@@ -57,3 +57,4 @@ public class SecteurActiviteController {
 
 	
 }
+*/

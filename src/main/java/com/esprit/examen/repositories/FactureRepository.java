@@ -1,4 +1,4 @@
-package com.esprit.examen.repositories;
+/*package com.esprit.examen.repositories;
 
 import java.util.Date;
 import java.util.List;
@@ -28,3 +28,4 @@ public interface FactureRepository extends JpaRepository<Facture, Long> {
 	void updateFacture(Long id);
 	
 }
+*/

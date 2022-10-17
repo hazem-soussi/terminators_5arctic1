@@ -1,4 +1,4 @@
-package com.esprit.examen.entities;
+/*package com.esprit.examen.entities;
 
 import java.io.Serializable;
 import java.util.Set;
@@ -36,3 +36,4 @@ public class Operateur implements Serializable{
 	private Set<Facture> factures;
 	
 }
+*/

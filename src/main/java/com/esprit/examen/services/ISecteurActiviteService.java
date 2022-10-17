@@ -1,4 +1,4 @@
-package com.esprit.examen.services;
+/*package com.esprit.examen.services;
 
 import java.util.List;
 
@@ -17,3 +17,4 @@ public interface ISecteurActiviteService {
 	SecteurActivite retrieveSecteurActivite(Long id);
 
 }
+*/

@@ -1,4 +1,4 @@
-package com.esprit.examen.services;
+/*package com.esprit.examen.services;
 
 import java.util.List;
 import com.esprit.examen.entities.Operateur;
@@ -17,3 +17,4 @@ public interface IOperateurService {
 	Operateur retrieveOperateur(Long id);
 
 }
+*/
