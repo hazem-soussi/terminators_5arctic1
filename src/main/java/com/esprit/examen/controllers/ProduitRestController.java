@@ -1,4 +1,4 @@
-/*package com.esprit.examen.controllers;
+package com.esprit.examen.controllers;
 
 //import java.util.Date;
 import java.util.List;
@@ -24,16 +24,11 @@ public class ProduitRestController {
 	@GetMapping("/retrieve-all-produits")
 	@ResponseBody
 	public List<Produit> getProduits() {
-		List<Produit> list = produitService.retrieveAllProduits();
+		List<Produit> list = produitService.getAll();
 		return list;
 	}
 
-	// http://localhost:8089/SpringMVC/produit/retrieve-produit/8
-	@GetMapping("/retrieve-produit/{produit-id}")
-	@ResponseBody
-	public Produit retrieveRayon(@PathVariable("produit-id") Long produitId) {
-		return produitService.retrieveProduit(produitId);
-	}
+	
 
 	
 	// http://localhost:8089/SpringMVC/produit/add-produit/{idCategorieProduit}/{idStock}
@@ -59,21 +54,7 @@ public class ProduitRestController {
 	}
 
 	
-	// http://localhost:8089/SpringMVC/produit/assignProduitToStock/1/5
-	@PutMapping(value = "/assignProduitToStock/{idProduit}/{idStock}")
-	public void assignProduitToStock(@PathVariable("idProduit") Long idProduit, @PathVariable("idStock") Long idStock) {
-		produitService.assignProduitToStock(idProduit, idStock);
-	}
-
+}
 	
-	// http://localhost:8089/SpringMVC/produit/getRevenuBrutProduit/1/{startDate}/{endDate}
-/*	@GetMapping(value = "/getRevenuBrutProduit/{idProduit}/{startDate}/{endDate}")
-	public float getRevenuBrutProduit(@PathVariable("idProduit") Long idProduit,
-			@PathVariable(name = "startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date startDate,
-			@PathVariable(name = "endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date endDate) {
-
-		return produitService.getRevenuBrutProduit(idProduit, startDate, endDate);
-	}
-	}*/
 
 

@@ -1,4 +1,4 @@
-/*package com.esprit.examen.entities;
+package com.esprit.examen.entities;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -29,26 +29,47 @@ public class Produit implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idProduit;
-	/*private String codeProduit;
+	private String codeProduit;
 	private String libelleProduit;
-	private float prix;*/
-/*
-	@Temporal(TemporalType.DATE)
-	private Date dateCreation;
-	@Temporal(TemporalType.DATE)
-	private Date dateDerniereModification;
-	@ManyToOne
-	@JsonIgnore
-	private Stock stock;
-	/*@OneToMany(mappedBy = "produit")
-	@JsonIgnore
-	private Set<DetailFacture> detailFacture;
-	@ManyToOne
-	@JsonIgnore
-	private CategorieProduit categorieProduit;
-	*/
+
+	
+	public Produit() {
+	    
+	}
+
+public Produit(String codeProduit, String libelleProduit) {
+    this.setCodeProduit(codeProduit);
+    this.setLibelleProduit(libelleProduit);
+}
+
+public String getCodeProduit() {
+	return codeProduit;
+}
+
+public void setCodeProduit(String codeProduit) {
+	this.codeProduit = codeProduit;
+}
+
+public String getLibelleProduit() {
+	return libelleProduit;
+}
+
+public void setLibelleProduit(String libelleProduit) {
+	this.libelleProduit = libelleProduit;
+}
+
+public Long getIdProduit() {
+	return idProduit;
+}
+
+public void setIdProduit(Long idProduit) {
+	this.idProduit = idProduit;
+}
 
 
+
+
+}
 	
 
 //}
