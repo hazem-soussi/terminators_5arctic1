@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.esprit.examen.entities.Produit;
-import com.hades.kerberos.model.Product;
+
 
 public class TestProduct {
 	
