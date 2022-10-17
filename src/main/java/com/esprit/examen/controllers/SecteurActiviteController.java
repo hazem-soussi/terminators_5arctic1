@@ -22,8 +22,8 @@ public class SecteurActiviteController {
 	@GetMapping("/retrieve-all-secteurActivite")
 	@ResponseBody
 	public List<SecteurActivite> getSecteurActivite() {
-		List<SecteurActivite> list = secteurActiviteService.retrieveAllSecteurActivite();
-		return list;
+		
+		return secteurActiviteService.retrieveAllSecteurActivite();
 	}
 
 
@@ -37,8 +37,8 @@ public class SecteurActiviteController {
 	@PostMapping("/add-secteurActivite")
 	@ResponseBody
 	public SecteurActivite addSecteurActivite(@RequestBody SecteurActivite sa) {
-		SecteurActivite secteurActivite = secteurActiviteService.addSecteurActivite(sa);
-		return secteurActivite;
+		
+		return secteurActiviteService.addSecteurActivite(sa);
 	}
 
 	

@@ -72,15 +72,15 @@ public class FactureServiceImpl implements IFactureService {
 
 	@Override
 	public List<Facture> getFacturesByFournisseur(Long idFournisseur) {
-		Fournisseur fournisseur = fournisseurRepository.findById(idFournisseur).get();
-		return (List<Facture>) fournisseur.getFactures();
+		return (List<Facture>) fournisseurRepository.findById(idFournisseur).get().getFactures();
+		 
 	}
 
 	@Override
 	public void assignOperateurToFacture(Long idOperateur, Long idFacture) {
-		Facture facture = factureRepository.findById(idFacture).get();
+		
 		Operateur operateur = operateurRepository.findById(idOperateur).get();
-		operateur.getFactures().add(facture);
+		operateur.getFactures().add(factureRepository.findById(idFacture).get());
 		operateurRepository.save(operateur);
 	}
 
@@ -88,8 +88,8 @@ public class FactureServiceImpl implements IFactureService {
 	public float pourcentageRecouvrement(Date startDate, Date endDate) {
 		float totalFacturesEntreDeuxDates = factureRepository.getTotalFacturesEntreDeuxDates(startDate,endDate);
 		float totalRecouvrementEntreDeuxDates =reglementService.getChiffreAffaireEntreDeuxDate(startDate,endDate);
-		float pourcentage=(totalRecouvrementEntreDeuxDates/totalFacturesEntreDeuxDates)*100;
-		return pourcentage;
+		return ((totalRecouvrementEntreDeuxDates/totalFacturesEntreDeuxDates)*100);
+		
 	}
 	
 
