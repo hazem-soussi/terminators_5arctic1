@@ -18,10 +18,7 @@ public class TestRepo {
 	ProduitRepository repo;
 	
 
-    @Test
-    public void myTest() throws Exception {
-        repo.save(new Produit());
-    }
+ 
     // test methods for CRUD operations...
 }
 	
