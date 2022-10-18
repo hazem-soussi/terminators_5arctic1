@@ -23,7 +23,6 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Produit implements Serializable {
-
 	
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -32,15 +31,12 @@ public class Produit implements Serializable {
 	private String codeProduit;
 	private String libelleProduit;
 
-	
-	
+		
 
 public Produit(String codeProduit, String libelleProduit) {
     this.setCodeProduit(codeProduit);
     this.setLibelleProduit(libelleProduit);
 }
-
-
 
 
 public String getCodeProduit() {
@@ -66,8 +62,6 @@ public Long getIdProduit() {
 public void setIdProduit(Long idProduit) {
 	this.idProduit = idProduit;
 }
-
-
 
 
 }
