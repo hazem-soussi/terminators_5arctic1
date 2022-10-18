@@ -1,5 +1,5 @@
 package com.esprit.examen.controllers;
-...
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,5 +60,6 @@ public class CategorieProduitController {
 	public CategorieProduit modifyCategorieProduit(@RequestBody CategorieProduit categorieProduit) {
 		return categorieProduitService.updateCategorieProduit(categorieProduit);
 	}
+
 	
 }
