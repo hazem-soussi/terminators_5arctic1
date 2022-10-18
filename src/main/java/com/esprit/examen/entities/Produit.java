@@ -34,12 +34,16 @@ public class Produit implements Serializable {
 
 	
 	
-
+/*
 public Produit(String codeProduit, String libelleProduit) {
     this.setCodeProduit(codeProduit);
     this.setLibelleProduit(libelleProduit);
 }
-
+*/
+	
+	public Produit() {
+	    
+	}
 
 
 public String getCodeProduit() {
