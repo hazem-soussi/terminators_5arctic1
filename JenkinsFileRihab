@@ -16,7 +16,7 @@ pipeline {
     stages{
     
     
-        stage("Git Checkout"){
+        stage('stage1 : Checkout GIT'){
             steps {
                 echo 'Pulling..';
                   git branch: 'riBranch',
@@ -25,7 +25,7 @@ pipeline {
         }
         
         
-        stage('Maven Clean') {
+        stage('stage2 : Maven Build Project') {
             steps {
                 echo "Build project"
                 sh 'mvn clean install '
@@ -33,7 +33,7 @@ pipeline {
         }
         
         
-        stage('Maven Build') {
+        stage('stage3 : UNIT TEST') {
             steps {
                 echo "TESTING project"
                 sh 'mvn test -Dmaven.test.failure.ignore=true '
@@ -41,7 +41,7 @@ pipeline {
         }
         
         
-         stage('Unit Test') {
+         stage('stage4 : INT TEST') {
             steps {
                 sh 'mvn verify -DskipUnitTests'
             }
@@ -49,21 +49,24 @@ pipeline {
         
         
         
-        stage('Sonarqube Test') {
+        stage('stage5 : SonarQube Analysis') {
             steps {
                 echo "Executing Sonar Analysis"
                 sh 'mvn package sonar:sonar -Dsonar.host.url=http://192.168.1.2:9000 -Dmaven.test.failure.ignore=true -Dsonar.login=efe54466f7a977ede48b2a861e333b592e0daa96'
             }
         }
         
-  
-     stage('Create Package') {
+       
+        stage('stage6 : Create Package') {
             steps {
                 echo "Creating Package"
                 sh 'mvn package'
             }
         }
-        stage("Publish to Nexus") {
+        
+  
+  
+        stage("stage7: Publish to Nexus Repository Manager") {
             steps {
                 script {
                     pom = readMavenPom file: "pom.xml";
