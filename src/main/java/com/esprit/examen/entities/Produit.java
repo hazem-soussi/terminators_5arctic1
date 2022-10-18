@@ -39,10 +39,6 @@ public Produit(String codeProduit, String libelleProduit) {
 }
 
 
-public Produit() {
-	// TODO Auto-generated constructor stub
-}
-
 
 public String getCodeProduit() {
 	return codeProduit;
