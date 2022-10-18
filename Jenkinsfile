@@ -20,7 +20,7 @@ agent any
             }
         }
          
-         stage('integration test') {
+         stage('Integration test') {
             steps {
                 sh 'mvn verify -DskipUnitTests=true'
             }
