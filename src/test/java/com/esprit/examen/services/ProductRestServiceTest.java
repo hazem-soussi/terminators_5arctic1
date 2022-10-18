@@ -41,10 +41,10 @@ public class ProductRestServiceTest {
     @Before
     public void setUp() {
 
-    	Produit product = new Produit();
+    	Produit product = new Produit("codeProduit", "libelleProduit");
         product.setCodeProduit("iPhone 10");
         product.setIdProduit(1L);
-        Produit product1 = new Produit();
+        Produit product1 = new Produit("codeProduit", "libelleProduit");
         product1.setCodeProduit("alpha");
         product1.setIdProduit(2L);
 
@@ -67,7 +67,7 @@ public class ProductRestServiceTest {
     @Test
     public void addProd() {
 
-    	Produit prod = new Produit();
+    	Produit prod = new Produit("codeProduit", "libelleProduit");
         prod.setIdProduit(2L);
         prod.setCodeProduit("iPhone 10");
         productService.addProduit(prod);
@@ -92,7 +92,7 @@ public class ProductRestServiceTest {
 
         @Test
          void whenGivenId_shouldDeleteUser_ifFound(){
-            Produit prod = new Produit();
+            Produit prod = new Produit("","");
             prod.setCodeProduit("Test Name");
             prod.setIdProduit(1L);
 
@@ -104,7 +104,7 @@ public class ProductRestServiceTest {
 
         @Test
          void should_throw_exception_when_user_doesnt_exist() {
-            Produit prod = new Produit();
+            Produit prod = new Produit("codeProduit", "libelleProduit");
             prod.setIdProduit(89L);
             prod.setCodeProduit("Test Name");
 
@@ -136,11 +136,11 @@ public class ProductRestServiceTest {
 
     @Test
     public void should_throw_exception_when_prod_doesnt_exist1() {
-    	Produit prod = new Produit();
+    	Produit prod = new Produit("codeProduit", "libelleProduit");
     	prod.setIdProduit(89L);
     	prod.setCodeProduit("Test Name");
 
-        Produit newProd = new Produit();
+        Produit newProd = new Produit("codeProduit", "libelleProduit");
         newProd.setIdProduit(90L);
         prod.setCodeProduit("New Test Name");
 
