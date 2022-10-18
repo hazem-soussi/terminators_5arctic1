@@ -22,7 +22,7 @@ agent any
        
         stage('Unit test') {
             steps {
-                sh 'mvn test -DskipUnitTests=true'
+                sh 'mvn test '
             }
         }
          
