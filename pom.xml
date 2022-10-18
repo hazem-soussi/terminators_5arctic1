@@ -26,8 +26,7 @@
         <sonar.language>java</sonar.language>
         <junit-jupiter.version>5.8.2</junit-jupiter.version>
         
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        
 	</properties>
 
 	<dependencies>
@@ -111,19 +110,7 @@
 	</dependencies>
 
 	<build>
-	 <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.2.5</version>
-                    <configuration>
-                        <source>1.8</source>
-                        <target>1.8</target>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
+	 
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
