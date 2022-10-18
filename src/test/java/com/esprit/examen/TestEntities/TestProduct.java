@@ -1,4 +1,4 @@
-package com.esprit.examen.TestEntities;
+/*package com.esprit.examen.TestEntities;
 
 import org.junit.After;
 import org.junit.Assert;
@@ -52,4 +52,4 @@ public class TestProduct {
     
 
 
-}
+}*/
