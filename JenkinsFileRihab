@@ -36,14 +36,14 @@ pipeline {
         stage('stage3 : UNIT TEST') {
             steps {
                 echo "TESTING project"
-                sh 'mvn test -Dmaven.test.failure.ignore=true '
+                sh 'mvn test '
             }
         }
         
         
          stage('stage4 : INT TEST') {
             steps {
-                sh 'mvn verify -DskipUnitTests'
+                sh 'mvn verify'
             }
         }
         
