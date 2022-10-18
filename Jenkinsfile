@@ -19,6 +19,12 @@ agent any
                 sh 'mvn clean package -DskipTests=true'
             }
         }
+       
+        stage('Unit test') {
+            steps {
+                sh 'mvn test -DskipUnitTests=true'
+            }
+        }
          
          stage('Integration test') {
             steps {
@@ -27,7 +33,7 @@ agent any
         }
        
 
-            stage("Sonar Test") {
+            stage("Quality code Test") {
             steps {
            
              sh 'mvn sonar:sonar -Dsonar.projectKey=a -Dsonar.host.url=http://192.168.48.0:9000 -Dsonar.login=d6a5b4ab1830302b9a63e1e90cca5809d993af8b'         
