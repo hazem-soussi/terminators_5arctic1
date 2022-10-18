@@ -1,12 +1,6 @@
 pipeline {
 agent any
-     environment {
-        NEXUS_VERSION = "nexus3"
-        NEXUS_PROTOCOL = "http"
-        NEXUS_URL = "192.168.48.0:8081"
-        NEXUS_REPOSITORY = "nexus-repo"
-        NEXUS_CREDENTIAL_ID = "nexus"
-    }
+   
     stages {
         
 
@@ -23,6 +17,12 @@ agent any
             steps {
                 echo "Build & test Project"
                 sh 'mvn clean package -DskipTests=true'
+            }
+        }
+         
+         stage('integration test') {
+            steps {
+                sh 'mvn verify -DskipUnitTests=true'
             }
         }
        
