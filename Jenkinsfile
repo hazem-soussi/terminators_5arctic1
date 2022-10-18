@@ -12,8 +12,8 @@ agent any
 
         stage ("Git checkout "){
             steps{
-        git branch: 'main', 
-            url: 'https://github.com/WassimBA/test.git'
+        git branch: 'wassim_branch', 
+            url: 'https://github.com/hazem-soussi/terminators_5arctic1.git'
             }
         
         }
