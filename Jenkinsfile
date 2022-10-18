@@ -2,51 +2,55 @@ pipeline {
 agent any
     stages {
         
-       /* stage('MVN CLEAN'){
-            steps {
-                echo'clean...'
-            }
-        }
-        
-         stage('MVN COMPILE'){
-            steps {
-                echo'compile...'
-                
-            }
-        }
-        
-         stage('MVN SONARQUBE'){
-            steps {
-                echo'sonarqube'
-            }
-        } */
-        // main SATGES
-        stage ("Git checkout PLEAASE"){
+
+        stage ("Git checkout "){
             steps{
-        git branch: 'main', 
-            url: 'https://github.com/hazem-soussi/terminators_5arctic1.git'
+        git branch: 'rachidtest', 
+            url: 'https://github.com/WassimBA/test.git'
             }
         
         }
     
         
-                stage('Build Project') {
+                stage("Build & test Project") {
             steps {
-                echo "Build our project"
-                sh 'mvn package '
+                echo "Build & test Project"
+                sh 'mvn install'
+                sh 'mvn clean package -DskipTests=true'
             }
         }
         
 
+                
+               
+
+            
         
-             stage ("unit testing"){
-            steps{
-                sh "mvn test"
+           stage ('Scan and Build Jar File') {
+            steps {
+               withSonarQubeEnv(installationName: 'Sonar', credentialsId: 'sonartest') {
+                sh 'mvn clean package sonar:sonar'
+                }
             }
-        
         }
-    
+       
+        
+        
+           stage ('Nexus') {
+            steps {
+        
+        
+        nexusPublisher nexusInstanceId: 'nexus', 
+            nexusRepositoryId: 'maventest', 
+            packages: [[$class: 'MavenPackage',
+                        mavenAssetList: [[classifier: '', extension: '', filePath: '/var/lib/jenkins/workspace/test/target/tpAchatProject-1.0.jar']], 
+                        mavenCoordinate: [artifactId: 'spring-boot-starter-parent', 
+                                          groupId: 'org.springframework.boot',
+                                          packaging: 'jar', 
+                                          version: '2.5.3']]]
+    }
     
     }
 
 }
+    }
