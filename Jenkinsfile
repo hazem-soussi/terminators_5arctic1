@@ -13,10 +13,10 @@ agent any
         }
     
         
-                stage("Build Project") {
+                stage("Compile Project") {
             steps {
-                echo "Build & test Project"
-                sh 'mvn clean package -DskipTests=true'
+                echo "Compile Project"
+                sh 'mvn compile -DskipTests=true'
             }
         }
        
@@ -26,12 +26,18 @@ agent any
             }
         }
          
-         stage('Integration test') {
+        
+        stage("Build Project") {
+            steps {
+                echo "Build & test Project"
+                sh 'mvn clean package -DskipTests=true'
+            }
+        }
+        stage('Integration test') {
             steps {
                 sh 'mvn verify -DskipUnitTests=true'
             }
         }
-       
 
             stage("Quality code Test") {
             steps {
