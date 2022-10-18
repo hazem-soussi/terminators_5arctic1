@@ -1,5 +1,5 @@
 package com.esprit.examen.entities;
 
-public enum CategorieFournisseurkk {
+public enum CategorieFournisseur {
 ORDINAIRE,CONVENTIONNE
 }
