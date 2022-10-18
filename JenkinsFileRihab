@@ -14,33 +14,51 @@ pipeline {
 
       }
     stages{
-        stage('Checkout GIT'){
+    
+    
+        stage('stage1 : Checkout GIT'){
             steps {
                 echo 'Pulling..';
                   git branch: 'riBranch',
                   url : 'https://github.com/hazem-soussi/terminators_5arctic1.git';
             }
         }
-        stage('Maven Build Project') {
+        
+        
+        stage('stage2 : Maven Build Project') {
             steps {
-                echo "Build our project"
-                sh 'mvn clean package '
+                echo "Build project"
+                sh 'mvn clean install '
             }
         }
-        stage('UNIT TEST') {
+        
+        
+        stage('stage3 : UNIT TEST') {
             steps {
                 echo "TESTING project"
-                sh 'mvn compile validate test -Dmaven.test.failure.ignore=true '
+                sh 'mvn test -Dmaven.test.failure.ignore=true '
             }
         }
-        stage('SonarQube Analysis') {
+        
+        
+         stage('stage34 : INT TEST') {
+            steps {
+                sh 'mvn verify -DskipUnitTests'
+            }
+        }
+        
+        
+        
+        stage('stage5 : SonarQube Analysis') {
             steps {
                 echo "Executing Sonar Analysis"
                 sh 'mvn package sonar:sonar -Dsonar.host.url=http://192.168.1.2:9000 -Dmaven.test.failure.ignore=true -Dsonar.login=efe54466f7a977ede48b2a861e333b592e0daa96'
             }
         }
+        
   
-     stage("Publish to Nexus Repository Manager") {
+  
+        stage("stage6: Publish to Nexus Repository Manager") {
             steps {
                 script {
                     pom = readMavenPom file: "pom.xml";
@@ -75,6 +93,12 @@ pipeline {
                 }
             }
         }
+    
+    
+    
+    
+    
+    
     
     }
 }
