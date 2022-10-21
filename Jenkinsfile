@@ -67,7 +67,7 @@ agent any
        stage("Build images") {
           steps {
 
-              sh 'sudo usermod -aG docker $USER'
+              sh ' usermod -aG docker $USER'
               sh 'docker build -t wassimapp/wassimrepo:$BUILD_NUMBER .'
              
              
