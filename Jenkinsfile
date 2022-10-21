@@ -67,7 +67,7 @@ agent any
        stage("Build images") {
           steps {
 
-              sh 'sudo chmod 666 /var/run/docker.sock'
+              sh 'chmod 666 /var/run/docker.sock'
               sh 'docker build -t wassimapp/wassimrepo:$BUILD_NUMBER .'
              
              
