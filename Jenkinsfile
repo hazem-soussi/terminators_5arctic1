@@ -66,6 +66,9 @@ agent any
        
        stage("Build images") {
           steps {
+
+             
+              sh 'docker build -t wassimapp/wassimrepo:$BUILD_NUMBER .'
              
              
              }
