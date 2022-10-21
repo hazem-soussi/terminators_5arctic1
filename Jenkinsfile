@@ -62,4 +62,15 @@ agent any
                                                    version: '2.5.3']]]
 
 }
-           }}}
+           }
+       
+       stage("Build images") {
+          steps {
+             
+             
+             }
+       
+       
+       }
+    
+    }}
