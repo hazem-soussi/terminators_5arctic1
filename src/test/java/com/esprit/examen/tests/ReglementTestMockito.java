@@ -1,4 +1,4 @@
-package com.esprit.examen.services;
+package com.esprit.examen.tests;
 
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -6,6 +6,7 @@ import static org.mockito.Mockito.verify;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -16,9 +17,11 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.esprit.examen.entities.Reglement;
 import com.esprit.examen.repositories.ReglementRepository;
+import com.esprit.examen.services.ReglementServiceImpl;
 
 @ExtendWith(MockitoExtension.class)
-public class ReglementServiceImplTest {
+public class ReglementTestMockito {
+
 
     @Mock
     private ReglementRepository rr;
@@ -66,5 +69,4 @@ public class ReglementServiceImplTest {
         verify(rr, times(1)).save(reg);
     }
 }
-
 

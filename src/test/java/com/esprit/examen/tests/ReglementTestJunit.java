@@ -1,10 +1,13 @@
-package com.esprit.examen.entities;
-import org.junit.Assert;
+package com.esprit.examen.tests;
+
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ReglementEntityTest {
+import com.esprit.examen.entities.Reglement;
+
+public class ReglementTestJunit {
 	private Reglement reg;
     @Before
     public void setUp() throws Exception {
@@ -23,6 +26,5 @@ public class ReglementEntityTest {
         Assert.assertEquals("50L", reg.getIdReglement());
 
     }
-
 
 }
