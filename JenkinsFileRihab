@@ -11,6 +11,11 @@ pipeline {
         NEXUS_REPOSITORY = "nexus-repo"
 
         NEXUS_CREDENTIAL_ID = "adminNexus"
+        
+        
+        registry = "rihab96/spring"
+        registryCredentials='dockerHub'
+        dockerImage= ' '
 
       }
     stages{
@@ -103,7 +108,14 @@ pipeline {
         }
     
     
-    
+       stage("stage7: Build images") {
+          steps {
+
+             
+              sh 'docker build -t $BUILD_TAG:$BUILD_NUMBER .'
+             
+             
+             }
     
     
     
