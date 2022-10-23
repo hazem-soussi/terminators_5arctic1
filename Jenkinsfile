@@ -68,7 +68,7 @@ agent any
           steps {
 
              
-              sh 'docker build -t wassimapp/wassimrepo:$BUILD_NUMBER .'
+              sh 'docker build -t $BUILD_TAG:$BUILD_NUMBER .'
              
              
              }
