@@ -23,7 +23,7 @@ public class Reglement implements Serializable{
 
 	@Id
 	private Long idReglement;
-	private int montantPaye;
+	private double montantPaye;
 	
 	
 }
