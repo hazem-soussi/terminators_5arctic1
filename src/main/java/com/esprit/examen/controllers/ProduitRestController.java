@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.esprit.examen.entities.Produit;
 import com.esprit.examen.repositories.ProduitRepository;
-import com.esprit.examen.services.IProduitService;
+
 import com.esprit.examen.services.ProduitServiceImpl;
 
 
@@ -47,22 +47,22 @@ public class ProduitRestController {
 //    }
 ////:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::://///////////
     //ADD PRODUCT
-//    @ApiOperation(value = "add one product")
-//    @PostMapping("/productsADD")
-//    public ResponseEntity<?> addProduct(@RequestBody Product p) {
-//        return new ResponseEntity<>(prodServ.addProduct(p), HttpStatus.OK);
-//    }
+   
+    @PostMapping("/productsADD")
+    public ResponseEntity<?> addProduct(@RequestBody Produit p) {
+        return new ResponseEntity<>(prodServ.addProduct(p), HttpStatus.OK);
+   }
 
     // GET ALL PRODUCTS
-//    @ApiOperation(value = "List of all products on stock")
-//    @GetMapping("/products")
-//    public List<Product> getAllProductsRecords() {
-//        return prodRepo.findAll();
-//    }
+  
+    @GetMapping("/products")
+    public List<Produit> getAllProductsRecords() {
+       return prodRepo.findAll();
+  }
 
     // GET ALL PRODUCTS
-//    @ApiOperation(value = "getting product by ID")
-//    @GetMapping(value = "{id}")
+   // @ApiOperation(value = "getting product by ID")
+   // @GetMapping(value = "{id}")
 //    public Product getProductsById(@PathVariable(value = "id") Long id) {
 //        return prodRepo.findById(id).get();
 //    }

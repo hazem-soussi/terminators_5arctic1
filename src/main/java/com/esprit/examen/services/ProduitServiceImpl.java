@@ -43,7 +43,7 @@ public class ProduitServiceImpl {
 	    // delete all products
 	    public void deleteAll(){
 	        prodrepo.deleteAll();
-	    }
+    }
 
 
 

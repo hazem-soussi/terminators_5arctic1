@@ -26,17 +26,11 @@ public class Produit implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idProduit;
 	private String codeProduit;
 	private String libelleProduit;
 
 		
-
-public Produit(String codeProduit, String libelleProduit) {
-    this.setCodeProduit(codeProduit);
-    this.setLibelleProduit(libelleProduit);
-}
 
 
 
