@@ -11,7 +11,7 @@ public class ReglementTestJunit {
 	private Reglement reg;
     @Before
     public void setUp() throws Exception {
-        reg = new Reglement ( 1455L , 12);
+        reg = new Reglement ( 1455L , 12.2);
     }
 
     @After
