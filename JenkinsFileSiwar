@@ -47,7 +47,7 @@ pipeline {
         stage('Sonarqube Test') {
             steps {
                 echo "Sonarqube Testing "
-                sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=sonar'
+                sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=sonar -Pcoverage'
             }
         }
         
