@@ -68,7 +68,7 @@ agent any
           steps {
 
              
-              sh 'docker build -t $BUILD_TAG:$BUILD_NUMBER .'
+              sh 'docker build -t $TAG_NAME:$BUILD_NUMBER .'
              
              
              }
