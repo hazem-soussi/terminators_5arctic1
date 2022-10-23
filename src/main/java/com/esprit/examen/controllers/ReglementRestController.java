@@ -30,6 +30,7 @@ public class ReglementRestController {
       
         return reglementService.addReglement(r);
     }
+    
     @GetMapping("/retrieve-all-reglements")
     @ResponseBody
     public List<Reglement> getReglement() {
