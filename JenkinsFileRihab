@@ -12,10 +12,7 @@ pipeline {
 
         NEXUS_CREDENTIAL_ID = "adminNexus"
         
-        
-        registry = "rihab96/spring"
-        registryCredentials='dockerHub'
-        dockerImage= ' '
+       
 
       }
     stages{
