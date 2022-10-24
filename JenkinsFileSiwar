@@ -96,14 +96,32 @@ pipeline {
        
         
         }
-        stage("Build images") {
+        stage("Build our Image") {
           steps {
           
               sh 'docker build -t siwar/spring:$BUILD_NUMBER .'
               
              }
-       
-       
        }
+       
+       stage("Push to DockerHub") { 
+            steps { 
+                script { 
+                    docker.withRegistry( '', registryCredential ) { 
+                        dockerImage.push() 
+                    }
+                } 
+            }
+            
+        }
+        
+        stage("Docker-Compose") {
+          steps {
+              sh 'docker-compose up'
+             }
+       
+       
+       } 
+       
     }
 }
