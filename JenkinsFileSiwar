@@ -109,8 +109,8 @@ pipeline {
        stage("Push to DockerHub") { 
             steps { 
                 script {
-                    withCredentials([string(credentialsId: 'DockerHub', variable: 'docker_imagePWD')]) {
-                        sh 'docker login -u 142033 -p ${docker_imagePWD}'
+                    withCredentials([string(credentialsId: 'DockerHub', variable: 'azertyazerty')]) {
+                        sh 'docker login -u 142033 -p azertyazerty'
                     sh 'docker image push 142033/siwarspring:1'
                 } 
             }
