@@ -122,13 +122,10 @@ pipeline {
 
                 script { 
 
-                    docker.withRegistry( '', registryCredentials ) { 
-
-                        dockerImage.push() 
-
-                    }
+                    docker.withRegistry( '', registryCredentials )
 
                 } 
+                 sh 'docker image push rihab96/repo:$BUILD_NUMBER .'
 
             }
 
