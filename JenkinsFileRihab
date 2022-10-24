@@ -110,7 +110,7 @@ pipeline {
     
        stage("stage7: Build images") {
           steps {
-              sh 'docker build -t rihab96/repo:$BUILD_NUMBER .'
+              sh 'docker build -t $BUILD_TAG:$BUILD_NUMBER'
               
              }
     
@@ -120,10 +120,10 @@ pipeline {
         
             steps {
                 script {
-                    withCredentials([string(credentialsId: 'docker_password', variable: 'docker_imagePWD')]) {
-                        sh "docker login -u rihab96 -p ${docker_imagePWD}"
-                    sh 'docker image push rihab96/repo:$BUILD_NUMBER .'
-                    sh 'docker image push rihab96/repo:$BUILD_NUMBER .'}
+                    withCredentials([string(credentialsId: 'dockerID', variable: 'dockerhubpwd')]) {
+                        sh "docker login -u rihab96 -p ${dockerhubpwd}"
+                    sh 'docker push $BUILD_TAG:$BUILD_NUMBER'
+                    }
                     
                 
                     
