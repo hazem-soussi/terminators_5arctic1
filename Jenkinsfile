@@ -78,17 +78,15 @@ agent any
        
        
        }
-        stage("Push image to DockerHub") {
+       stage("Docker-Compose") {
           steps {
 
              
-             script {
-docker.withRegistry( '', registryCredential ) {
-dockerImage.push()
+              sh 'docker-compose up'
              
              
              }
-             }
+       
        
        }
     
