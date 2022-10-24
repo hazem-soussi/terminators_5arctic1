@@ -101,7 +101,7 @@ pipeline {
         stage("Build our Image") {
           steps {
           
-              sh 'docker build -t siwar/spring:$BUILD_NUMBER .'
+              sh 'docker build -t 142033/spring:$BUILD_NUMBER .'
               
              }
        }
@@ -109,9 +109,9 @@ pipeline {
        stage("Push to DockerHub") { 
             steps { 
                 script {
-                    withCredentials([string(credentialsId: 'DockerHub', variable: 'azertyazerty')]) {
-                        sh 'docker login -u 142033 -p azertyazerty'
-                    sh 'docker image push 142033/siwarspring:1'
+                    withCredentials([stringwithCredentials([string(credentialsId: 'dockerID', variable: 'Docker')])]) {
+                        sh 'docker login -u 142033 -p ${Docker}'
+                        sh 'docker image push 142033/spring:$BUILD_NUMBER'
                 } 
             }
             
