@@ -51,6 +51,15 @@ agent any
     }
     
     }
+             stage("Build images") {
+          steps {
+
+             
+              sh 'docker build -t $BUILD_TAG:$BUILD_NUMBER .'
+             
+             
+             }
+       
 
 }
     }
