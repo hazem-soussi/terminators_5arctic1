@@ -7,7 +7,7 @@ services:
       -  kell-network
     restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_ROOT_PASSWORD=
       - MYSQL_DATABASE=tpachato
       - MYSQL_USER=root
       - MYSQL_PASSWORD=
