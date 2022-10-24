@@ -110,7 +110,7 @@ pipeline {
     
        stage("stage7: Build images") {
           steps {
-              sh 'docker build -t rihab96/repo:$BUILD_NUMBER'
+              sh 'docker build -t rihab96/repo:$BUILD_NUMBER .'
               
              }
     
