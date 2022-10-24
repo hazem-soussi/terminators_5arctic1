@@ -98,11 +98,9 @@ pipeline {
         }
         stage("Build images") {
           steps {
-
-             
+          
               sh 'docker build -t siwar/spring:$BUILD_NUMBER .'
-             
-             
+              
              }
        
        
