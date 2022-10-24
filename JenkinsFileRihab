@@ -116,21 +116,26 @@ pipeline {
     
      }
      
-     stage('Deploy our image') { 
-
-            steps { 
-
-                script { 
-
-                    docker.withRegistry( '', registryCredentials )
-
-                } 
-                 sh 'docker image push rihab96/repo:$BUILD_NUMBER .'
-
+   stage ("Push image to dockerHUb") {
+        
+            steps {
+                script {
+                    withCredentials([string(credentialsId: 'docker_password', variable: 'docker_imagePWD')]) {
+                        sh "docker login -u rihab96 -p ${docker_imagePWD}"
+                    sh 'docker image push rihab96/repo:$BUILD_NUMBER .'
+                    sh 'docker image push rihab96/repo:$BUILD_NUMBER .'}
+                    
+                
+                    
+          
+                }
+            
             }
-
-        } 
-
+        
+        
+        }
+        
+    
        
     
     
