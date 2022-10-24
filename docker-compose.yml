@@ -4,7 +4,7 @@ services:
     container_name: mysql
     image: mysql/mysql-server
     networks:
-      -  kell-network
+      -  bridge
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=
