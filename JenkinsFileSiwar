@@ -109,7 +109,7 @@ pipeline {
        stage("Push to DockerHub") { 
             steps { 
                 script {
-                    withCredentials([stringwithCredentials([string(credentialsId: 'dockerID', variable: 'Docker')])]) {
+                     withCredentials([string(credentialsId: 'dockerID', variable: 'Docker')]) {
                         sh 'docker login -u 142033 -p ${Docker}'
                         sh 'docker image push 142033/spring:$BUILD_NUMBER'
                 } 
