@@ -14,9 +14,9 @@ pipeline {
         NEXUS_CREDENTIAL_ID = "siwar"
         
         registry = "142033/siwarspring" 
-4
+
         registryCredential = 'DockerHub' 
-5
+
         dockerImage = ''
       }
       
