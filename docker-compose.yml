@@ -16,7 +16,7 @@ services:
       - ./schema.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - "3306:3306"
-  web:
+  app:
     container_name: app
     image: $BUILD_NAME:$BUILD_NUMBER
     ports:
