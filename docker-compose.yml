@@ -3,8 +3,7 @@ services:
   mysql:
     container_name: mysql
     image: mysql/mysql-server
-    networks:
-      driver: bridge
+    network_mode: bridge
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=
@@ -19,12 +18,12 @@ services:
   app:
     container_name: app
     image: $BUILD_TAG:$BUILD_NUMBER
+    network_mode: bridge
     ports:
       - "8089:8089"
     depends_on:
       - mysql
-    networks:
-      - kell-network
+    
 volumes:
     mysql-data:
 networks:
