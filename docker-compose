@@ -1,0 +1,32 @@
+version: '2.4'
+services:
+  mysql:
+    container_name: mysql
+    image: mysql:latest
+    networks:
+      -  kell-network
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./schema.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "3306:3306"
+  web:
+    container_name: app
+    image: $BUILD_NAME:$BUILD_NUMBER
+    ports:
+      - "8089:8089"
+    depends_on:
+      - mysql
+    networks:
+      - kell-network
+volumes:
+    mysql-data:
+networks:
+  kell-network:
+    driver: bridge
