@@ -57,7 +57,7 @@ agent any
              
               sh 'docker build -t $BUILD_TAG:$BUILD_NUMBER .'
              
-             
+          }
              }
        
 
