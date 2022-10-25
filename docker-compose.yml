@@ -1,10 +1,13 @@
 version: '2.4'
 services:
+  app:
+    image: 142033/spring:$BUILD_NUMBER
+    ports:
+      - "8089:8089"
+    depends_on:
+      - mysql
   mysql:
-    container_name: bd
     image: docker.io/mysql:latest
-    networks:
-      -  kell-network
     restart: unless-stopped
     environment:
       - MYSQL_ROOT_PASSWORD= root
@@ -15,17 +18,6 @@ services:
       - mysql-data:/var/lib/mysql
     ports:
       - "3306:3306"
-  app:
-    container_name: springapp
-    image: 142033/spring:$BUILD_NUMBER
-    ports:
-      - "8089:8089"
-    depends_on:
-      - mysql
-    networks:
-      - kell-network
 volumes:
     mysql-data:
-networks:
-  kell-network:
-    driver: bridge
+
