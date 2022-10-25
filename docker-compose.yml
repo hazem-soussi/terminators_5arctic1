@@ -6,7 +6,7 @@ services:
     ports:
       - 8089:8089
     depends_on:
-      - Mysqldb
+      - mysqldbb
   mysqldbb:
     image: "mysql:5.7"
     restart: always
