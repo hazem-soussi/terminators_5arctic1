@@ -2,7 +2,7 @@ version: '2.4'
 services:
   mysql:
     container_name: mysql
-    image: vagrant/mysql:latest
+    image: mysql:latest
     networks:
       -  kell-network
     restart: unless-stopped
