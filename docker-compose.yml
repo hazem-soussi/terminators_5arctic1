@@ -1,22 +1,22 @@
 version: '2.4'
 services:
   mysql:
-    container_name: mysql
+    container_name: bd
     image: docker.io/mysql:latest
     networks:
       -  kell-network
     restart: unless-stopped
     environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=tpachat
-      - MYSQL_USER=root
-      - MYSQL_PASSWORD=root
+      - MYSQL_ROOT_PASSWORD= root
+      - MYSQL_DATABASE= tpachat
+      - MYSQL_USER= root
+      - MYSQL_PASSWORD= root
     volumes:
       - mysql-data:/var/lib/mysql
     ports:
       - "3306:3306"
   app:
-    container_name: app
+    container_name: springapp
     image: 142033/spring:$BUILD_NUMBER
     ports:
       - "8089:8089"
