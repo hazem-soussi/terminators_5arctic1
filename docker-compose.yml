@@ -1,13 +1,13 @@
 version: '2.4'
 services:
-  Server:
+  serverr:
     build: .
     restart: always
     ports:
       - 8089:8089
     depends_on:
       - Mysqldb
-  Mysqldb:
+  mysqldbb:
     image: "mysql:5.7"
     restart: always
     ports:
