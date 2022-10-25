@@ -5,7 +5,7 @@ services:
     image: vagrant/mysql:latest
     networks:
       -  kell-network
-    restart: always
+    restart: unless-stopped
     environment:
       - MYSQL_ROOT_PASSWORD=
       - MYSQL_DATABASE=tpachato
