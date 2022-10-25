@@ -5,7 +5,7 @@ services:
     image: docker.io/mysql:latest
     networks:
       -  kell-network
-    
+    restart: unless-stopped
     environment:
       - MYSQL_ROOT_PASSWORD=
       - MYSQL_DATABASE= tpachat
