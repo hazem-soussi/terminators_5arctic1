@@ -8,8 +8,8 @@ services:
     restart: unless-stopped
     environment:
       - MYSQL_ROOT_PASSWORD=
-      - MYSQL_DATABASE=tpachato
-      - MYSQL_USER=root
+      - MYSQL_DATABASE= tpachato
+      - MYSQL_USER= root
       - MYSQL_PASSWORD=
     volumes:
       - mysql-data:/var/lib/mysql
