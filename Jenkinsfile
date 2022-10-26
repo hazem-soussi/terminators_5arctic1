@@ -86,7 +86,7 @@ agent any
       stage('Deploy our image') { 
 
             steps { 
-
+               script{
 
                docker.withRegistry( '', registryCredential ) { 
 
@@ -96,7 +96,7 @@ agent any
                 } 
 
             }}
-    
+      }
        stage("Docker-Compose") {
           steps {
 
