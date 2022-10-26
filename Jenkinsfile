@@ -88,10 +88,8 @@ agent any
             steps { 
                script{
 
-               docker.withRegistry( '', registryCredential ) { 
-
-                        dockerImage.push() 
-
+                  withDonker Registry([credentialsId:"dockerhub, url:"")]{
+                                      sh ' docker push wassimba/wassimrepo:$BUILD_NUMBER '
                    
                 } 
 
