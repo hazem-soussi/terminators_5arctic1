@@ -82,7 +82,7 @@ agent any
           steps {
 
              
-              sh 'echo $dokcerhub_PSW | docker login -u $dokcerhub_USR --password-stdin'
+              sh 'echo  | docker login -u $$DOCKERHUB_CREDENTIALS_USR -p $DOCKERHUB_CREDENTIALS_PWD'
               sh 'docker push $BUILD_TAG:$BUILD_NUNMBER'
              
              
