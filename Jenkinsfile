@@ -76,7 +76,7 @@ agent any
           steps {
 
              
-              sh 'docker build -t $BUILD_TAG:$BUILD_NUMBER .'
+              sh 'docker build -t wassimba/tpachat:$BUILD_NUMBER .'
              
              
              }
@@ -89,7 +89,7 @@ agent any
                script{
 
                   withDockerRegistry([credentialsId:"dockerhub", url:""]){
-                                      sh ' docker push wassimba/wassimrepo:$BUILD_NUMBER '
+                                      sh ' docker push wassimba/tpachat:$BUILD_NUMBER '
                    
                 } 
 
