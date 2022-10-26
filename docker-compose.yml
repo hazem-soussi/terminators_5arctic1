@@ -12,6 +12,7 @@ services:
     volumes:
       - db:/var/lib/mysql
   app:
+    image: $BUILD_TAG:$BUILD_NUMBER
     depends_on:
       - mysqldb
     restart: on-failure
