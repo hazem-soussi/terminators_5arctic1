@@ -35,7 +35,7 @@ agent any
         }
        
         
-        
+        /*
            stage ('Nexus') {
             steps {
         
@@ -51,6 +51,7 @@ agent any
     }
     
     }
+    */
 
 }
     }
