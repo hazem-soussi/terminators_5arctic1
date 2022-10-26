@@ -1,7 +1,7 @@
 pipeline {
 agent any
    environment {     
-    registryCredential = 'dockerhub'    
+    dockerhub = credentials('dockerhub')   
 } 
    
     stages {
@@ -78,6 +78,19 @@ agent any
        
        
        }
+       stage("Push to DockerHub") {
+          steps {
+
+             
+              sh 'echo $dokcerhub_PSW | docker login -u $dokcerhub_USR --password-stdin'
+              sh 'docker push $BUILD_TAG:$BUILD_NUNMBER'
+             
+             
+             }
+       
+       
+       }
+    
        stage("Docker-Compose") {
           steps {
 
