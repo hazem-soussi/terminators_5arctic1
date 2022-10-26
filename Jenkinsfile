@@ -32,7 +32,7 @@ agent any
             steps {
                 sh 'mvn test '
             }
-        }}
+        }
          
         
         stage("Build Project") {
@@ -84,7 +84,7 @@ agent any
        
        }
    
-      }
+      
        stage("Docker-Compose") {
           steps {
 
@@ -97,5 +97,5 @@ agent any
        
        }
 
-
+    }
 
