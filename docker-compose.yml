@@ -19,7 +19,7 @@ services:
     container_name: app
     image: $BUILD_TAG:$BUILD_NUMBER
     environment:
-       SPRING_DATASOURCE_URL: dbc:mysql://192.168.48.0:3306/tpachato?createDatabaseIfNotExist=true?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC 
+       SPRING_DATASOURCE_URL: jdbc:mysql://192.168.48.0:3306/tpachato?createDatabaseIfNotExist=true?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC 
        SPRING_DATASOURCE_USERNAME: root
        SPRING_DATASOURCE_PASSWORD: root
     network_mode: bridge
