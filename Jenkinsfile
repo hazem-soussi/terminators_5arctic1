@@ -95,7 +95,7 @@ agent any
                    
                 } 
 
-            }
+            }}
     
        stage("Docker-Compose") {
           steps {
