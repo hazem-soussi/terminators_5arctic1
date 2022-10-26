@@ -6,7 +6,7 @@ services:
     network_mode: bridge
     restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD=roor
+      - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=tpachato
       - MYSQL_USER=mysql
       - MYSQL_PASSWORD=mysql
