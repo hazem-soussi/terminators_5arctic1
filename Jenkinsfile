@@ -83,17 +83,7 @@ agent any
        
        
        }
-      stage('Deploy our image') { 
-
-            steps { 
-               script{
-
-                  withDockerRegistry([credentialsId:"dockerhub", url:""]){
-                                      sh ' docker push wassimba/wassimrepo:$BUILD_NUMBER '
-                   
-                } 
-
-            }}
+   
       }
        stage("Docker-Compose") {
           steps {
