@@ -1,9 +1,14 @@
 pipeline {
 agent any
-   environment {     
-    dockerhub = credentials('dockerhub')   
-} 
+   environment { 
+
+        registry = "wassimba/wassimrepo" 
+
+        registryCredential = 'dockerhub' 
+
+      dockerImage = ''
    
+   } 
     stages {
         
 
@@ -78,18 +83,20 @@ agent any
        
        
        }
-       stage("Push to DockerHub") {
-          steps {
+      stage('Deploy our image') { 
 
-             
-              sh 'echo  | docker login -u $DOCKERHUB_CREDENTIALS_USR -p $DOCKERHUB_CREDENTIALS_PWD'
-              sh 'docker push $BUILD_TAG:$BUILD_NUNMBER'
-             
-             
-             }
-       
-       
-       }
+            steps { 
+
+                script { 
+               docker.withRegistry( '', registryCredential ) { 
+
+                        dockerImage.push() 
+
+                    }
+
+                } 
+
+            }
     
        stage("Docker-Compose") {
           steps {
