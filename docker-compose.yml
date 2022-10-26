@@ -9,7 +9,7 @@ services:
       - MYSQL_ROOT_PASSWORD=
       - MYSQL_DATABASE=tpachato
       - MYSQL_USER=root
-      - MYSQL_PASSWORD=
+      - MYSQL_PASSWORD=root
     volumes:
       - mysql-data:/var/lib/mysql
       
@@ -19,9 +19,9 @@ services:
     container_name: app
     image: $BUILD_TAG:$BUILD_NUMBER
     environment:
-       SPRING_DATASOURCE_URL: jdbc:mysql://172.17.0.2:3306/tpachato?createDatabaseIfNotExist=true?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC 
+       SPRING_DATASOURCE_URL: jdbc:mysql://192.168.48.0:3306/tpachato?createDatabaseIfNotExist=true?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC 
        SPRING_DATASOURCE_USERNAME: root
-       SPRING_DATASOURCE_PASSWORD: 
+       SPRING_DATASOURCE_PASSWORD: root
     network_mode: bridge
     ports:
       - "8089:8089"
