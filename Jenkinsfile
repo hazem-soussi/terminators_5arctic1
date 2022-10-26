@@ -32,7 +32,7 @@ agent any
             steps {
                 sh 'mvn test '
             }
-        }
+        }}
          
         
         stage("Build Project") {
