@@ -40,17 +40,7 @@ agent any
             steps {
         
         
-        nexusPublisher nexusInstanceId: 'nexus', 
-            nexusRepositoryId: 'maventest', 
-            packages: [[$class: 'MavenPackage',
-                        mavenAssetList: [[classifier: '', extension: '', filePath: '/var/lib/jenkins/workspace/test/target/tpAchatProject-1.0.jar']], 
-                        mavenCoordinate: [artifactId: 'spring-boot-starter-parent', 
-                                          groupId: 'org.springframework.boot',
-                                          packaging: 'jar', 
-                                          version: '2.5.3']]]
-    }
-    
-    }
+     
              stage("Build images") {
           steps {
 
