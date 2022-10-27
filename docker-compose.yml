@@ -19,7 +19,7 @@ services:
     container_name: app
     image: rachid135/jenkins:$BUILD_NUMBER
     environment:
-       SPRING_DATASOURCE_URL: jdbc:mysql://192.168.48.0:3306/tpachato?createDatabaseIfNotExist=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC 
+       SPRING_DATASOURCE_URL: jdbc:mysql://192.168.1.50:3306/tpachato?createDatabaseIfNotExist=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC 
        SPRING_DATASOURCE_USERNAME: mysql
        SPRING_DATASOURCE_PASSWORD: mysql
     network_mode: bridge
