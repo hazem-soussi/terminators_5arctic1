@@ -45,7 +45,7 @@ agent any
           steps {
 
              
-              sh 'docker build -t $BUILD_TAG:$BUILD_NUMBER .'
+              sh 'docker build -t rachid135/jenkins:$BUILD_NUMBER .'
              
           }
              }
