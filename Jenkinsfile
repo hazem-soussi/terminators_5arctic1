@@ -36,9 +36,9 @@ agent any
        
         
         
-           stage ('Nexus') {
+           stage ("Nexus") {
             steps {
-                sh ' echo 'nexus' '
+                sh ' echo "nexus" '
             }}
      
              stage("Build images") {
