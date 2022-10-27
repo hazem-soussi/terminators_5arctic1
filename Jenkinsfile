@@ -38,8 +38,8 @@ agent any
         
            stage ('Nexus') {
             steps {
-        
-        
+                sh ' echo 'nexus' '
+            }}
      
              stage("Build images") {
           steps {
