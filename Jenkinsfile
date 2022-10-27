@@ -49,6 +49,18 @@ agent any
              
           }
              }
+        stage('Deploy our image') { 
+
+            steps { 
+               script{
+
+                  withDockerRegistry([credentialsId:"dockerhub", url:""]){
+                                      sh ' docker push rachid135/jenkins:$BUILD_NUMBER '
+                   
+                } 
+
+               }}}
+   
        
         
         
