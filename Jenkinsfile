@@ -1,5 +1,14 @@
 pipeline {
 agent any
+     environment { 
+
+        registry = "rachid135/jenkins" 
+
+        registryCredential = 'dockerhub' 
+
+      dockerImage = ''
+   
+   } 
     stages {
         
 
