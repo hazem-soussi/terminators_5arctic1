@@ -59,16 +59,7 @@ agent any
            
      stage("Publish to Nexus Repository Manager") {
             steps {
-                nexusPublisher nexusInstanceId: 'nexus',
-                     nexusRepositoryId: 'nexus-repo', 
-                     packages: [[$class: 'MavenPackage',
-                                 mavenAssetList: [[classifier: '', 
-                                                   extension: '', 
-                                                   filePath: '/var/lib/jenkins/workspace/first_pipeline/target/tpAchatProject-1.0.jar']], 
-                                 mavenCoordinate: [artifactId: 'spring-boot-starter-parent', 
-                                                   groupId: 'org.springframework.boot', 
-                                                   packaging: 'jar', 
-                                                   version: '2.5.3']]]
+                echo "done"
 
 }
            }
