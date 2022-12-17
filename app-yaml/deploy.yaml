@@ -19,6 +19,30 @@ spec:
         image: wassimba/tpachat:272
         ports:
         - containerPort: 8089
+        env:   # Setting Enviornmental Variables
+            - name: DB_HOST   # Setting Database host address from configMap
+              valueFrom :
+                configMapKeyRef :
+                  name : db-config
+                  key :  host
+
+            - name: DB_NAME  # Setting Database name from configMap
+              valueFrom :
+                configMapKeyRef :
+                  name : db-config
+                  key :  dbName
+
+            - name: DB_USERNAME  # Setting Database username from Secret
+              valueFrom :
+                secretKeyRef :
+                  name : mysql-secrets
+                  key :  username
+
+            - name: DB_PASSWORD # Setting Database password from Secret
+              valueFrom :
+                secretKeyRef :
+                  name : mysql-secrets
+                  key :  password
 ---
 apiVersion: v1
 kind: Service
@@ -104,4 +128,21 @@ spec:
   resources:
     requests:
       storage: 20Gi
+---
+apiVersion : v1
+kind : ConfigMap
+metadata:
+  name : db-config
+data:
+  host : mysql.app-yaml.svc.cluster.local
+
+  dbName: tpachat
+---
+apiVersion : v1
+kind : Secret
+metadata:
+  name : mysql-secrets
+data:
+  username : cm9vdA==
+  password : cm9vdA==
 
