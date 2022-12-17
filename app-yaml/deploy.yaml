@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+  labels:
+    app: app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+      - name: app
+        image: wassimba/tpachat:271
+        ports:
+        - containerPort: 8089
+---
+apiVersion: apps/v1
+kind: Service
+metadata:
+  name: app-service
+spec:
+  selector:
+    matchLabels: app
+  ports:
+  - name: name-of-service-port
+    protocol: TCP
+    port: 8089
+    targetPort: http-web-svc
