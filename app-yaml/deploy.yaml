@@ -88,9 +88,17 @@ spec:
       - image: mysql:5.6
         name: mysql
         env:
-          # Use secret in real usage
-        - name: MYSQL_ROOT_PASSWORD
-          value: root
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom :
+                secretKeyRef :
+                  name : mysql-secrets
+                  key :  password
+
+            - name: MYSQL_DATABASE # Setting Database Name from a 'ConfigMap'
+              valueFrom :
+                configMapKeyRef :
+                  name : db-config
+                  key :  dbName
         ports:
         - containerPort: 3306
           name: mysql
@@ -134,8 +142,7 @@ kind : ConfigMap
 metadata:
   name : db-config
 data:
-  host : mysql.app-yaml.svc.cluster.local
-
+  host : mysql
   dbName: tpachat
 ---
 apiVersion : v1
