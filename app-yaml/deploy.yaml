@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: wassimba/tpachat:271
+        image: wassimba/tpachat:272
         ports:
         - containerPort: 8089
 ---
