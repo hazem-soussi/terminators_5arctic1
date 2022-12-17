@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: wassimba/tpachat:274
+        image: wassimba/tpachat:275
         ports:
         - containerPort: 8089
         env:   # Setting Enviornmental Variables
