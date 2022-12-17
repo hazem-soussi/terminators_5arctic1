@@ -30,5 +30,5 @@ public class CategorieProduit implements Serializable {
 	private String codeCategorie;
 	private String libelleCategorie;
 	
-	private Set<Produit> produits;
+	
 }
