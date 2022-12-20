@@ -10,7 +10,7 @@ pipeline {
 
         NEXUS_REPOSITORY = "nexus-repo"
 
-        NEXUS_CREDENTIAL_ID = "nexus"
+        NEXUS_CREDENTIAL_ID = "AdminNexus"
         
         
         registry = "rihab96/spring"
