@@ -10,7 +10,7 @@ agent any
 
         NEXUS_REPOSITORY = "nexus-repo"
 
-        NEXUS_CREDENTIAL_ID = "adminNexus"
+        NEXUS_CREDENTIAL_ID = "nexus"
           
           
 
